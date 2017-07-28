@@ -12,7 +12,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/foundation-icons.css" rel="stylesheet">
+    <link href="css/materialdesignicons.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,56 +23,62 @@
 </head>
 
 <body>
-
-   <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Project name</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-       
-        </div>
-    </nav>-->
     <div class="header">
-        <section id="header">
-            <div class="deg" style="height: 800px;">
-            </div>
-            <div style="height: 40px; padding-left: 20px; background-color: black;">
-                    <div style="padding-top: 10px;">
-                        <span class="glyphicon glyphicon-envelope" style="color: #FF8A03;"></span>
-                        <span style="color: white; font-weight: bold;">SIGN UP FOR UPDATES</span>
-                        <span class="glyphicon glyphicon-shopping-cart" style="color: #FF8A03;"></span>
-                        <div class="pull-right" style="padding-right: 50px;">
-                            <button class="btn btn-success navbar-btn" style="margin-top: -0.5em; "><i class="glyphicon glyphicon-volume-up"></i> +FOLLOW</button>
-                            <i class="fi-crown" style="font-size: 20px; color: white; letter-spacing: 2px;"></i>
-                            <a href=""><i class="fa fa-twitter" style="font-size: 20px; color: white; letter-spacing: 2px;"></i></a>
-                            <a href=""><i class="fa fa-facebook" style="font-size: 20px; color: white; letter-spacing: 2px;"></i></a>
-                            <a href=""><i class="fa fa-instagram" style="font-size: 20px; color: white; letter-spacing: 2px;"></i></a>
-                            <a href=""><i class="fa fa-apple" style="font-size: 20px; color: white; letter-spacing: 2px;"> MUSIC</i></a>
-                            <a class="btn btn-default navbar-btn" style="margin-top: -0.5em;">SIGN IN</a>
+	   <section id="header" class="appear">
+            <div id="carga" class="deg" style="height: 800px;">
+                <div class="contenedor" style="padding-top: 300px;">
+                    <div class="progress progress-striped active" >
+                        <div id="bar" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;" >
+                            <span class="sr-only">0% Complete</span>                            
                         </div>
                     </div>
+                    <p style="text-align: center; font-size: 24px; color: white;">Loading</p>
+                </div>
+                
+                <script>
+                    var progreso = 0;
+                    var idIterval = setInterval(function(){
+                      // Aumento en 10 el progeso
+                      progreso +=10;
+                      $('#bar').css('width', progreso + '%');
 
+                      //Si llegó a 100 elimino el interval
+                      if(progreso == 100){
+                        clearInterval(idIterval);
+                          $("#carga").css('display', 'none');
+                      }
+                    },1000);
+                </script>
+                
+            </div>
+           <div class="ocultarbarra" style="height: 40px; padding-left: 20px; background-color: black;">
+                <div  style="padding-top: 10px;">
+                    <span class="glyphicon glyphicon-envelope" style="color: #FF8A03;"></span>
+                    <span style="color: white; font-weight: bold;">SIGN UP FOR UPDATES</span>
+                    <span class="glyphicon glyphicon-shopping-cart" style="color: #FF8A03;"></span>
+                    <div class="pull-right" style="padding-right: 50px;">
+                        <button class="btn btn-success navbar-btn" style="margin-top: -0.5em; "><i class="glyphicon glyphicon-volume-up"></i> +FOLLOW</button>
+                        <a href=""><i class="mdi mdi-crown" style="font-size: 20px; color: #FF8A03; letter-spacing: 2px;"></i></a>
+                        <a href=""><i class="fa fa-twitter" style="font-size: 20px; color: white; letter-spacing: 2px;"></i></a>
+                        <a href=""><i class="fa fa-facebook" style="font-size: 20px; color: white; letter-spacing: 2px;"></i></a>
+                        <a href=""><i class="fa fa-instagram" style="font-size: 20px; color: white; letter-spacing: 2px;"></i></a>
+                        <a href=""><i class="fa fa-apple" style="font-size: 20px; color: white; letter-spacing: 2px;"> MUSIC</i></a>
+                        <a class="btn btn-default navbar-btn" style="margin-top: -0.5em;">SIGN IN</a>
+                    </div>
                 </div>
-            <div class="navbar">                
-                <div class="navbar-header" style="padding-left: 20px;">
-                    <img src="img/logo2.png" class="img-responsive" data-0="line-height:90px;" data-300="line-height:50px;" style="width: 200px;">
-                    <!--<p style="color: #FF8A03; text-align: center; font-size: 20px;">SINCE X 1994</p>-->
-                </div>
-                <div id="navbar" class="collapse navbar-collapse" style="padding-right: 200px;">
-                    <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+                
+            </div>
+		
+		   <div class="navbar" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:92px; background-color:rgba(0,0,0,1);">
+			
+				<div class="navbar-header alinearimagen" style="">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="fa fa-bars color-white"></span>
+					</button>
+					<img class="navbar-brand img-responsive tamanologo" data-0="line-height:90px;" data-300="line-height:50px;" src="img/Logo.png" >
+				</div>
+				<div class="navbar-collapse collapse alinearmenu">
+					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
                         <li class="active"><a href="#" style="color: #0F0D0E; font-weight: bold;">JAUS</a></li>
                         <li><a href="#" style="color: #0F0D0E; font-weight: bold;">SHOWS</a></li>
                         <li><a href="#" style="color: #0F0D0E; font-weight: bold;">NEWS</a></li>
@@ -81,13 +87,13 @@
                         <li><a href="#" style="color: #0F0D0E; font-weight: bold;">PHOTOS</a></li>
                         <li><a href="#" style="color: #0F0D0E; font-weight: bold;">VIDEOS</a></li>
                         <li><a href="#" style="color: #0F0D0E; font-weight: bold;">CONTACT</a></li>
-                    </ul>
-
-                </div>
-            </div>
-            
-        </section>
-    </div>
+					</ul>
+				</div><!--/.navbar-collapse -->
+			</div>
+		
+		
+	</section>
+	</div>
     <section id="slider">
         <div style="padding-right: 15px; padding-left: 15px;">
             <div class="row">
@@ -304,50 +310,49 @@
             </div>-->
         </div>
     </section>
-    <section id="contacto">
-        <div style="height: 600px; background-color: gainsboro;">           
-            <div class="contenedor" style="margin: 0 auto;">
-                <form method="post" role="form" class="form-horizontal" style="padding-top: 100px;"> 
-                    <div class="form-group">
-                         <div class="col-md-2">
-                         </div>
-                        <div class="input-group col-md-8">
-                            <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Name" required>
+    <section id="section-contact" class="section appear clearfix">
+        <div style="height: 800px; background-color: gainsboro;">          
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="cform" id="contact-form">
+                            <div id="sendmessage">
+                                 Su mensaje se ha enviado con exito, le responderemos lo mas pronto posible. Gracias!
+                            </div>
+                            <form action="" method="post" role="form" class="contactForm" style="padding-top: 100px;">
+                                <div class="wow">
+                                  <div class="form-group">
+                                    <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Name" data-rule="maxlen:4" data-msg="Por favor ingrese al menos 4 carácteres">
+                                    <div class="validation"></div>
+                                  </div>
+                                  <div class="form-group">
+                                    <input class="form-control" type="text" id="apellido" name="apellido" placeholder="Last Name" data-rule="maxlen:4" data-msg="Por favor ingrese al menos 4 carácteres">
+                                    <div class="validation"></div>
+                                  </div>
+                            <div class="form-group">
+                                <input class="form-control" type="tel" id="tlf" name="tlf" placeholder="Phone" data-rule="tlf" data-msg="Por favor ingrese un teléfono valido">
+                                <div class="validation"></div>
+                            </div>
+                          <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Por favor ingrese un e-mail valido">
+                            <div class="validation"></div>
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" name="redes" id="redes" placeholder="@" data-rule="maxlen:4" data-msg="Por favor ingrese al menos 8 caracteres" />
+                            <div class="validation"></div>
+                          </div>
+                          <div class="form-group">
+                            <textarea class="form-control"  name="mensaje" rows="5" placeholder="Message" data-rule="required" data-msg="Por favor escriba algo para nosotros"></textarea>
+                            <div class="validation"></div>
+                          </div>
+                        </div>
+                          <!--<button type="submit" class="line-btn azul">ENVIAR</button>-->
+                        </form>
+
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-2">
-                         </div>
-                        <div class="input-group col-md-8">
-                            <input class="form-control" type="text" id="apellido" name="apellido" placeholder="Last Name" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-2">
-                        </div>
-                        <div class="col-md-8 input-group">
-                            <input class="form-control" type="tel" id="tlf" name="tlf" placeholder="Phone" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-2"></div>
-                        <div class="input-group col-md-8">
-                            <input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-2"></div>
-                        <div class="input-group col-md-8">
-                            <input class="form-control" type="text" id="redes" name="redes" placeholder="@" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-2"></div>
-                        <div class="input-group col-md-8">
-                            <textarea class="form-control" rows="3" id="mensaje" name="mensaje" placeholder="Message" required></textarea>
-                        </div>
-                    </div>
-                </form>
+                <!-- ./span12 -->
+                </div>        
             </div>
         </div>
     </section>
@@ -375,7 +380,11 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>    
+    <script src="js/jquery.appear.js"></script>
+    <script src="js/main.js"></script>    
+    <script src="js/validate.js"></script>
+    <script src="js/wow.min.js"></script>
 </body>
 
 </html>
